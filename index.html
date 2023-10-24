@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="container-nav">
+    <section id="section-body">
+
+        <section id="home-section">
+            <a href="index.html" id="home-link">Home</a>
+            <img src="assets\img\snorlax-home.png" alt="pokeball">
+        </section>
+        
+        <section id="title-section">
+            <h1>Pokémon</h1>
+            <img src="assets\img\pokeball.png" alt="pokeball">
+        </section>
+
+        
+     
+        <section id="section-search">
+            <form action="#" method="post" id="search-form">
+                <input type="search" name="busquedanombre" id="nombre-input" placeholder="Escribe el nombre del Pokémon">
+                <input type="submit" value="Buscar">
+            </form>
+        </section>
+        
+        <div id="pokemon-info" style="display: none;">
+        
+            <p id="pokemon-name"></p> 
+            <section id="pokemon-imagen">
+                <img id="pokemon-image" src="" alt="Imagen del Pokémon">
+            </section>  
+            <p id="pokemon-description"></p>  
+            <p id="pokemon-abilities"></p>  
+            <p id="pokemon-evolution"></p>
+        </div>
+
+        <section id="section-button">
+            <button id="evolution-button" style="display: none">Evolucionar</button>
+        </section>
+
+       
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>    
+    <script src="./main.js"></script>
+</body>
+</html>
