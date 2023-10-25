@@ -110,12 +110,12 @@ function PokemonSpecies(pokemonId) {
 
             console.log('Siguiente evolución:' + cadenaEvoluciones[pokemonPosition +1])
       
-            evolutionElement.textContent = `Evolucionar a: ${pokemonNextEvolution}`;
+            evolutionElement.textContent = `Evolución: ${pokemonNextEvolution}`;
             evolutionButton.textContent = 'Evolucionar'
             evolutionButton.style.display = 'block'           
           
           }else {
-            evolutionElement.textContent = "No puede evolucionar";
+            evolutionElement.textContent = "Evolución: No puede evolucionar";
             evolutionButton.style.display = 'none';
           }  
         })
