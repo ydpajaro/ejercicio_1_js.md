@@ -63,7 +63,7 @@ function searchPokemon(nombre) {
 
 
 evolutionButton.addEventListener('click',function(){
-  console.log('siguiente pokemon a buscar ' + pokemonNextEvolution);
+  
   searchPokemon(pokemonNextEvolution);
 });
 
@@ -90,25 +90,20 @@ function PokemonSpecies(pokemonId) {
       pokemonDescription.textContent = `Descripción: ${flavorText}`;
 
       const evolutionChainURL = speciesData.evolution_chain.url;
-      console.log(evolutionChainURL);
+      
 
       pokemonEvolution(evolutionChainURL)
         .then((cadenaEvoluciones) => {
 
-          console.log('Esta es mi cadena de evolución extraída: ' + cadenaEvoluciones);
-
-          //Analizamos la cadena devulta
+         
 
           const pokemonPosition = cadenaEvoluciones.indexOf(speciesData.name);
 
           if(cadenaEvoluciones.length  > pokemonPosition + 1){
 
-            console.log('El pokemon está en la posicion: '+ pokemonPosition)
-            console.log('Siguiente posicion de evolucion' + cadenaEvoluciones[(pokemonPosition + 1)])
-      
             pokemonNextEvolution = cadenaEvoluciones[pokemonPosition +1]
 
-            console.log('Siguiente evolución:' + cadenaEvoluciones[pokemonPosition +1])
+            
       
             evolutionElement.textContent = `Evolución: ${pokemonNextEvolution}`;
             evolutionButton.textContent = 'Evolucionar'
