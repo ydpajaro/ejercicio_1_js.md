@@ -25,14 +25,13 @@ function searchPokemon(nombre) {
       .then((response) => {
         const pokemonData = response.data;
         const pokemonNameFront = pokemonData.name;
-        const officialArtworkImageURL =
-          pokemonData.sprites.other["official-artwork"]["front_default"];
+        const officialArtworkImageURL = pokemonData.sprites.other["official-artwork"]["front_default"];
 
         const pokemonImage = document.getElementById("pokemon-image");
         pokemonImage.src = officialArtworkImageURL;
 
         const pokemonName = document.getElementById("pokemon-name");
-        pokemonName.textContent = `${pokemonNameFront}`;
+        pokemonName.textContent = `${pokemonNameFront.charAt(0).toUpperCase()}${pokemonNameFront.slice(1)}`;
 
         const pokemonId = pokemonData.id;
 
@@ -42,7 +41,9 @@ function searchPokemon(nombre) {
         const abilitiesText = abilitiesList.join(", ");
 
         const pokemonAbilities = document.getElementById("pokemon-abilities");
-        pokemonAbilities.textContent = `Habilidades: ${abilitiesText}`;
+        //pokemonAbilities.textContent = `Habilidades: ${abilitiesText}`;
+        pokemonAbilities.innerHTML = ` <span style="font-weight: bold;">Habilidades:</span> ${abilitiesText}`;
+
 
         PokemonSpecies(pokemonId);
 
@@ -87,7 +88,8 @@ function PokemonSpecies(pokemonId) {
       }
 
       const pokemonDescription = document.getElementById("pokemon-description");
-      pokemonDescription.textContent = `Descripción: ${flavorText}`;
+      pokemonDescription.innerHTML = `<span style="font-weight: bold;">Descripción:</span> ${flavorText}`;
+      
 
       const evolutionChainURL = speciesData.evolution_chain.url;
       
@@ -105,12 +107,12 @@ function PokemonSpecies(pokemonId) {
 
             
       
-            evolutionElement.textContent = `Evolución: ${pokemonNextEvolution}`;
+            evolutionElement.innerHTML = `<span style="font-weight: bold;">Evolución:</span> ${pokemonNextEvolution.charAt(0).toUpperCase()}${pokemonNextEvolution.slice(1)}`;
             evolutionButton.textContent = 'Evolucionar'
             evolutionButton.style.display = 'block'           
           
           }else {
-            evolutionElement.textContent = "Evolución: No puede evolucionar";
+            evolutionElement.innerHTML = `<span style="font-weight: bold;">Evolución:</span> No puede evolucionar`;
             evolutionButton.style.display = 'none';
           }  
         })
@@ -186,3 +188,5 @@ homeLink.addEventListener("click", function (event) {
 
   nombreInput.value = "";
 });
+
+

@@ -5,10 +5,8 @@
     --color-amarillo-pastel:#EBE675;
     --color-azul: #008CBA; 
     --color-rojo: #FF0000;
-    --color-rojo-pastel:#F15B6C; 
-    --color-verde: #00FF00; 
+    --color-rojo-pastel:#F15B6C;
     --color-negro: #000000; 
-    --color-blanco: #FFFFFF; 
     --color-amarillo-palido: #F5EEE0;
     --color-azul-oscuro: #004466;
     --color-gris-claro: #E3E2E3;
@@ -50,7 +48,7 @@ body {
     border: 5px solid #BDB6A9; 
     padding: 10px;
     max-width: 500px;
-    max-height: 800px;
+    max-height: 850px;
     
 }
 
@@ -96,6 +94,7 @@ body {
     flex-direction: row;
     justify-content: center;
     font-weight: bold;
+    font-size: 25px;
 }
 
 #pokemon-imagen {
